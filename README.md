@@ -380,11 +380,6 @@ npm test
 
 This project is licensed under the ISC License.
 
-## 👨‍💻 Author
-
-**Tafheem Ahemad**
-- GitHub: [@Tafheem-Ahemad](https://github.com/Tafheem-Ahemad)
-
 ## 🙏 Acknowledgments
 
 - Docker for containerization
@@ -396,5 +391,6 @@ This project is licensed under the ISC License.
 ---
 
 For detailed API documentation and advanced configuration options, please refer to the individual service documentation in their respective directories.
+
 
 
