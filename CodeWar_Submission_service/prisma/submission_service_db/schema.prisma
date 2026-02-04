@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../generated/submissionService"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("SUBMISSION_SERVICE_DB_URL")
+}
+
+model User {
+  id            String   @id
+  username      String   
+  email         String   @unique
+  problemSolved Int      @default(0) 
+  bio           String   @default("")
+  profilePicture String   @default("")
+  createdAt     DateTime @default(now())
+  submissions   Submission[]
+}
+
+model Submission {
+  id          String   @id @default(cuid())
+  userId      String
+  problemId   String
+  language    String
+  code        String
+  status      String   @default("PENDING")
+  createdAt   DateTime @default(now())
+  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, problemId, code])
+}

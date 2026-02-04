@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Problem {
+  id          String     @id
+  title       String     @unique
+  description String
+  difficulty  String
+  tags        String[]
+  companies   String[]
+  editorial   String?
+  hints       String[]
+  codeSubs    codeSubs[]
+  solution    solution[]
+  testcase    testcase[]
+}
+
+model codeSubs {
+  id           String  @id
+  problemId    String
+  language     String
+  startSnippet String
+  endSnippet   String
+  userSnippet  String
+  Problem      Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+}
+
+model solution {
+  id        String  @id
+  problemId String
+  language  String
+  code      String
+  Problem   Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+}
+
+model testcase {
+  id        String  @id
+  problemId String
+  input     String
+  output    String
+  isHidden  Boolean @default(false)
+  Problem   Problem @relation(fields: [problemId], references: [id], onDelete: Cascade)
+}
