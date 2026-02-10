@@ -1,12 +1,12 @@
-# CodeWar - Competitive Programming Platform
+# CodeBattle - Competitive Programming Platform
 
 ## 🚀 Overview
 
-CodeWar is a comprehensive competitive programming platform built with a microservices architecture. It allows users to solve coding problems, submit solutions, and get real-time feedback on their code execution. The platform supports multiple programming languages and provides a seamless coding experience similar to platforms like LeetCode and CodeforceS.
+CodeBattle is a comprehensive competitive programming platform built with a microservices architecture. It allows users to solve coding problems, submit solutions, and get real-time feedback on their code execution. The platform supports multiple programming languages and provides a seamless coding experience similar to platforms like LeetCode and CodeforceS.
 
 ## 🏗️ Architecture
 
-CodeWar follows a microservices architecture with the following core services:
+CodeBattle follows a microservices architecture with the following core services:
 
 ### System Flow Diagram
 
@@ -391,6 +391,7 @@ This project is licensed under the ISC License.
 ---
 
 For detailed API documentation and advanced configuration options, please refer to the individual service documentation in their respective directories.
+
 
 
 
