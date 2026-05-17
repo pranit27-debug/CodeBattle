@@ -41,11 +41,11 @@ CREATE TABLE "solution" (
     "problemId" TEXT NOT NULL,
     "language" TEXT NOT NULL,
     "code" TEXT NOT NULL,
-
+-- PrimaryKey
     CONSTRAINT "solution_pkey" PRIMARY KEY ("id")
 );
 
--- CreateIndex
+-- CreateIndexonProblem
 CREATE UNIQUE INDEX "Problem_title_key" ON "Problem"("title");
 
 -- AddForeignKey
